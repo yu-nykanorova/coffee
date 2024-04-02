@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="home-container">
+  <h1 class="main-title">Find the best coffee for you</h1>
+<app-search></app-search>
+
+<div class="list">
+    <a [routerLink]="'/product/' + item.id" class="item" *ngFor="let item of coffeeData">
+      {{item.title}}
+      {{item.id}}
+    </a>
+</div>
+
+<h2 class="chapter-title">Coffee beans</h2>
+
+<app-coffee-beans></app-coffee-beans>
+</div>

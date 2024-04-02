@@ -1,0 +1,11 @@
+
+<div class="coffee-beans-list">
+    <a [routerLink]="'/coffee-beans/coffee-beans-item/' + item.id" class="coffee-beans-list__item" *ngFor="let item of coffeeBeans">
+      <div class="coffee-beans-list__img">
+        <img src="{{item.img}}" alt="coffee-beans">
+      </div>
+      <h3>{{item.title}}</h3>
+      <p>{{item.roast}}</p>
+      <p>{{item.price}}</p>
+    </a>
+</div>

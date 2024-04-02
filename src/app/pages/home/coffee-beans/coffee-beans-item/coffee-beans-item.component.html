@@ -1,0 +1,56 @@
+<div class="item-image-container">
+    <img src="{{item.img}}" alt="coffee">
+    <div class="back-and-like">
+        <span class="icon-chevron-left" (click)="goBack()"></span>
+        <span class="icon-heart"></span>
+    </div>
+    
+    <div class="item-title">
+        <div class="item-title__info">
+            <h3 class="item-title__name">{{item.title}}</h3>
+            <p class="item-title__region">From {{item.region}}</p>
+            <div class="item-title__raiting">
+                <span class="icon-star"></span>
+                <p class="raiting">{{item.raiting}}</p>
+                <p class="votes">({{item.votes}})</p>
+            </div>
+        </div>
+        <div class="item-title__markers">
+            <div class="markers">
+                <div class="marker-bean">
+                    <span class="icon-coffee"></span>
+                    <p>Bean</p>
+                </div>
+                <div class="marker-location">
+                    <span class="icon-location"></span>
+                    <p>{{item.region}}</p>
+                </div>
+            </div>
+            <div class="roast">
+                {{item.roast}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="item-info-container">
+    <p class="desc">Description</p>
+    <p class="item-info-desc">{{item.desc}}</p>
+    <p class="desc">Size</p>
+    <div class="item-size">
+        <div class="size">250gm</div>
+        <div class="size">500gm</div>
+        <div class="size">1000gm</div>
+    </div>
+    <div class="item-info-buy">
+        <div class="price">
+            <p class="price-title">Price</p>
+            <p class="price-value"><span>$ </span>10.50</p>
+        </div>
+        <button class="add-btn">Add to Cart</button>
+    </div>
+</div>
+    
+
+
+
+

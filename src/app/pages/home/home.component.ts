@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  public coffeeData = [
+    {
+      title: 'Cappucino',
+      id: 1, 
+    },
+    {
+      title: 'Latte',
+      id: 2,
+    }
+  ]
 
 }

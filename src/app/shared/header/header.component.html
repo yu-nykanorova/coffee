@@ -1,0 +1,9 @@
+<div class="menu" (click)="navIsActive = !navIsActive">
+    <span class="icon-menu"></span>
+ </div>
+ <div class="user">
+    <a class="user-link" routerLink="/user">
+      <span class="icon-coffee"></span>
+    </a>
+ </div>
+ <app-header-menu [@fadeInOut] *ngIf="navIsActive" (navClose)="navIsActive = false" [class.is-active]="navIsActive"></app-header-menu>
