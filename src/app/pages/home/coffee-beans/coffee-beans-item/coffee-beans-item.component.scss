@@ -23,8 +23,15 @@
     background: linear-gradient(137deg, #21262e 0%, #0c0f14 100%);
     border: 1px solid #21262e;
     border-radius: 10rem;
-    max-width: 33rem;
+    width: 33rem;
     font-size: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-chevron-left::before {
+    color: var(--c-text-grey);
 }
 
 .item-title {
@@ -37,9 +44,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    &__info {
-     }
 
 	&__name {
         font-weight: 600;
@@ -68,8 +72,6 @@
         max-width: 131rem;
      }
 }
-
-.icon-star { }
 
 .raiting { 
     font-weight: 600;
@@ -147,7 +149,7 @@
     margin-bottom: 8rem;
  }
 
-.item-size { 
+.item-size-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,6 +165,11 @@
     border-radius: 10rem;
     background: var(--c-bg-second);
  }
+
+.item-size.selected .size {
+    color: var(--c-bg-btn);
+    border: 2px solid var(--c-bg-btn);
+}
 
 .item-info-buy { 
     display: flex;
@@ -205,3 +212,4 @@
     border: none;
     cursor: pointer;
 }
+

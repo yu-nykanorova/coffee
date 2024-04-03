@@ -36,10 +36,10 @@
     <p class="desc">Description</p>
     <p class="item-info-desc">{{item.desc}}</p>
     <p class="desc">Size</p>
-    <div class="item-size">
-        <div class="size">250gm</div>
-        <div class="size">500gm</div>
-        <div class="size">1000gm</div>
+    <div class="item-size-list">
+        <div class="item-size" *ngFor="let item of coffeeSize" [ngClass]="{'selected': selectedItem === item}" (click)="selectItem(item)">
+            <div class="size">{{item.size}} gm</div>
+        </div>
     </div>
     <div class="item-info-buy">
         <div class="price">

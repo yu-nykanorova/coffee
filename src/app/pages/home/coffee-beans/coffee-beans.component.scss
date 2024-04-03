@@ -1,0 +1,69 @@
+.coffee-beans-list {
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin-bottom: 30rem;
+
+	&__item {
+        display: inline-block;
+        margin-right: 22rem;
+        max-width: 149rem;
+        padding: 12rem 11rem 20rem;
+        background: linear-gradient(137deg, #252a32 0%, #262b33 100%);
+        border-radius: 23rem;
+     }
+
+	&__img { 
+        display: flex;
+        position: relative;
+        margin-bottom: 10rem;
+        img {
+            width: 100%;
+            border-radius: 16rem;
+        }
+    }
+
+	&__title {
+        font-weight: 400;
+        font-size: 13rem;
+        line-height: 154%;
+        color: var(--c-white);
+    }
+
+	&__roast {
+        font-weight: 400;
+        font-size: 9rem;
+        line-height: 222%;
+        color: var(--c-white);
+        margin-bottom: 3rem;
+     }
+
+	&__bye-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .price-value { 
+            font-weight: 600;
+            font-size: 15rem;
+            line-height: 133%;
+            color: var(--c-white);
+            span {
+                color: var(--c-bg-btn);
+            }
+        }
+        .add-btn { 
+            border-radius: 7rem;
+            max-width: 28rem;
+            max-height: 28rem;
+            background: var(--c-bg-btn);
+            border: none;
+            padding: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .icon-plus {
+            font-size: 10rem;
+         }
+     }
+}

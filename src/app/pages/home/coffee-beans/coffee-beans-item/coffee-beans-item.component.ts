@@ -12,8 +12,22 @@ import { HideService } from '../../../../hide.service';
 
 export class CoffeeBeansItemComponent implements OnInit {
 
+  selectedItem: any = null;
+
   public item: any;
   public coffeeBeans: any;
+
+  public coffeeSize = [
+    {
+      size: '250',
+    },
+    {
+      size: '500',
+    },
+    {
+      size: '1000',
+    }
+  ]
 
   constructor(private route: ActivatedRoute, private dataService: DataService, private location: Location, private hideServise: HideService) {
     this.coffeeBeans = this.dataService.getProductData();
@@ -31,4 +45,7 @@ export class CoffeeBeansItemComponent implements OnInit {
     this.location.back();
   }
 
+  selectItem(item:any) {
+    this.selectedItem = item;
+  }
 }

@@ -2,11 +2,29 @@
   <h1 class="main-title">Find the best coffee for you</h1>
 <app-search></app-search>
 
-<div class="list">
-    <a [routerLink]="'/product/' + item.id" class="item" *ngFor="let item of coffeeData">
-      {{item.title}}
-      {{item.id}}
-    </a>
+<div class="drinks-list" #list (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()">
+  <a routerLink="/" class="drinks-list__item" *ngFor="let item of coffeeDrinks" [ngClass]="{'selected': selectedItem === item}" (click) = "selectItem(item)">
+    <div class="drinks-list__item-name">{{ item.name }}</div>
+  </a>
+</div>
+        
+
+<div class="coffee-drinks">
+  <a [routerLink]="'/product/' + item.id" class="coffee-drinks__item" *ngFor="let item of coffeeDrinksData">
+    <div class="coffee-drinks__img">
+      <img src="{{item.img}}" alt="coffee-drink">
+      <div class="coffee-drinks__raiting">
+        <span class="icon-star"></span>
+        <p class="raiting_value">{{ item.raiting }}</p>
+      </div>
+    </div>
+    <h3 class="coffee-drinks__title">{{item.title}}</h3>
+    <p class="coffee-drinks__desc">{{item.desc}}</p>
+    <div class="coffee-drinks__bye-info">
+      <p class="price-value"><span>$ </span>{{item.price}}</p>
+      <button class="add-btn"><span class="icon-plus"></span></button>
+    </div>
+  </a>
 </div>
 
 <h2 class="chapter-title">Coffee beans</h2>
