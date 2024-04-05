@@ -1,32 +1,17 @@
 .coffee-beans-list {
-    overflow-x: hidden;
+    overflow: auto;
     white-space: nowrap;
     margin-bottom: 30rem;
-
-	&__item {
-        display: inline-block;
-        margin-right: 22rem;
-        max-width: 149rem;
-        padding: 12rem 11rem 20rem;
-        background: linear-gradient(137deg, #252a32 0%, #262b33 100%);
-        border-radius: 23rem;
-     }
+    margin-left: 30rem;
+    padding: 0 0 10rem 0;
 
 	&__img { 
         display: flex;
         position: relative;
         margin-bottom: 10rem;
         img {
-            width: 100%;
             border-radius: 16rem;
         }
-    }
-
-	&__title {
-        font-weight: 400;
-        font-size: 13rem;
-        line-height: 154%;
-        color: var(--c-white);
     }
 
 	&__roast {
@@ -54,13 +39,10 @@
             border-radius: 7rem;
             max-width: 28rem;
             max-height: 28rem;
-            background: var(--c-bg-btn);
-            border: none;
             padding: 10rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
         }
         .icon-plus {
             font-size: 10rem;

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HideService } from '../../hide.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -7,18 +6,12 @@ import { Subscription } from 'rxjs';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent implements OnInit {
-  isComponentVisible = true;
+export class SidebarComponent {
+
   subscription: Subscription = new Subscription;
 
-  constructor(private hideServise: HideService) { }
+  router: any;
 
-  ngOnInit(): void {
-    this.subscription = this.hideServise.componentState$.subscribe(state => { this.isComponentVisible = state;});
-  }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
+  constructor() { }
 }

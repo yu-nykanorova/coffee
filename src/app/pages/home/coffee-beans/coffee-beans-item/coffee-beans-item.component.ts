@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { DataService } from '../../data.service';
-import { HideService } from '../../../../hide.service';
+import { ProductDataService } from '../../product-data.service';
+import { ActivatedRoute } from '@angular/router';
+import { GlobalService } from '../../../../global.service';
 
 @Component({
   selector: 'app-coffee-beans-item',
@@ -12,40 +12,35 @@ import { HideService } from '../../../../hide.service';
 
 export class CoffeeBeansItemComponent implements OnInit {
 
-  selectedItem: any = null;
-
-  public item: any;
-  public coffeeBeans: any;
-
   public coffeeSize = [
-    {
-      size: '250',
-    },
-    {
-      size: '500',
-    },
-    {
-      size: '1000',
-    }
+    { value: '250' },
+    { value: '500' },
+    { value: '1000' }
   ]
 
-  constructor(private route: ActivatedRoute, private dataService: DataService, private location: Location, private hideServise: HideService) {
-    this.coffeeBeans = this.dataService.getProductData();
-   }
-
+  public selectedSize: any = this.coffeeSize[0];
+  public size: any;  
+  public data: any;
+  isLiked: boolean = false;
+  
+  constructor(private location: Location, public productData: ProductDataService, private route: ActivatedRoute, private likedService: GlobalService) {  }
+  
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const itemIdFromRoute = Number(routeParams.get('id'));
-    this.item = this.coffeeBeans.find((item: { id: number; }) => item.id === itemIdFromRoute);
-
-    this.hideServise.setComponentState({ state: false });
+    const productIdFromRoute = Number(routeParams.get('id'));
+    this.data = this.productData.coffeeBeans.find((data: { id: number; }) => data.id === productIdFromRoute);
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  selectItem(item:any) {
-    this.selectedItem = item;
+  selectSize(size:any) {
+    this.selectedSize = size;
   }
+
+  toggleLike(): void {
+    this.isLiked = !this.isLiked;
+  }
+ 
 }

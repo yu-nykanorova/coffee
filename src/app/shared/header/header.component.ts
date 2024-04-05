@@ -9,4 +9,6 @@ import { fadeInOut } from '../animation';
 })
 export class HeaderComponent {
   public navIsActive = false;
+
+
 }

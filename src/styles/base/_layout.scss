@@ -1,12 +1,24 @@
 html {
     font-size: 1px;
   }
-  html,body {
+
+html,body {
     height: 100%;
   }
-  body {
+
+body {
     font-size: 16rem;
     font-family: var(--font-family);
     background: var(--c-bg-main);
     color: var(--c-white);
   }
+
+.p30 {
+  padding: 0 30rem;
+}
+
+.btn {
+  cursor: pointer;
+  background: var(--c-bg-btn);
+  border: none;
+}

@@ -1,9 +1,9 @@
 .home-container {
-    padding: 0 30rem;
+    padding: 0;
 }
 
 .main-title {
-    max-width: 200rem;
+    max-width: 260rem;
     font-weight: 600;
     font-size: 28rem;
     line-height: 129%;
@@ -17,16 +17,17 @@
     line-height: 125%;
     color: var(--c-white);
     margin-top: 23rem;
-    margin-bottom: 19rem;
+    margin-bottom: 19rem; 
 }
 
 .drinks-list {
     min-height: 34rem;
-    overflow: hidden;
+    overflow: auto;
     white-space: nowrap;
     display: flex;
     gap: 19rem;
     margin-bottom: 22rem;
+    margin-left: 30rem;
     
 	&__item {
         display: inline-block;
@@ -39,7 +40,7 @@
             height: 8rem;
             border-radius: 7rem;
             position: absolute;
-            bottom: 0;
+            bottom: 3rem;
             left: calc(50% - 4rem);
             transition: .2s all ease-in-out;
             background: var(--c-bg-btn);
@@ -49,7 +50,7 @@
         &.selected::before {
             transform: scale(1);
         }
-
+ 
         &.selected .drinks-list__item-name {
             color: var(--c-bg-btn);
         }
@@ -65,24 +66,16 @@
 }
 
 .coffee-drinks {
-    overflow-x: hidden;
+    overflow: auto;
     white-space: nowrap;
+    margin-left: 30rem;
+    padding: 0 0 10rem 0;
     
-	&__item { 
-        display: inline-block;
-        margin-right: 22rem;
-        width: 149rem;
-        padding: 12rem 11rem 20rem;
-        background: linear-gradient(137deg, #252a32 0%, #262b33 100%);
-        border-radius: 23rem;
-    }
-
 	&__img { 
         display: flex;
         position: relative;
         margin-bottom: 10rem;
         img {
-            width: 100%;
             border-radius: 16rem;
         }
     }
@@ -112,13 +105,6 @@
          }
      }
 
-	&__title { 
-        font-weight: 400;
-        font-size: 13rem;
-        line-height: 154%;
-        color: var(--c-white);
-    }
-
 	&__desc {
         font-weight: 400;
         font-size: 9rem;
@@ -145,13 +131,10 @@
             border-radius: 7rem;
             max-width: 28rem;
             max-height: 28rem;
-            background: var(--c-bg-btn);
-            border: none;
             padding: 10rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
         }
         .icon-plus {
             font-size: 10rem;

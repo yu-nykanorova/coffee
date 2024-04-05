@@ -1,14 +1,14 @@
 
 <div class="coffee-beans-list">
-    <a [routerLink]="'/coffee-beans/coffee-beans-item/' + item.id" class="coffee-beans-list__item" *ngFor="let item of coffeeBeans">
+    <a [routerLink]="'/coffee-beans/coffee-beans-item/' + item.id" class="item-container coffee-beans-list__item" *ngFor="let item of productData.coffeeBeans">
       <div class="coffee-beans-list__img">
         <img src="{{item.img}}" alt="coffee-beans">
       </div>
-      <h3 class="coffee-beans-list__title">{{item.title}}</h3>
+      <h3 class="item-title coffee-beans-list__title">{{item.title}}</h3>
       <p class="coffee-beans-list__roast">{{item.roast}}</p>
       <div class="coffee-beans-list__bye-info">
         <p class="price-value"><span>$ </span>{{item.price}}</p>
-        <button class="add-btn"><span class="icon-plus"></span></button>
+        <button class="btn add-btn"><span class="icon-plus"></span></button>
       </div>
     </a>
 </div>

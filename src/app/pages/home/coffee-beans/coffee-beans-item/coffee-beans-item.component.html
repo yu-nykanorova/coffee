@@ -1,18 +1,18 @@
 <div class="item-image-container">
-    <img src="{{item.img}}" alt="coffee">
+    <img src="{{data.img}}" alt="coffee">
     <div class="back-and-like">
         <span class="icon-chevron-left" (click)="goBack()"></span>
-        <span class="icon-heart"></span>
+        <span class="icon-heart" [ngClass]="{'liked': isLiked}" (click)="toggleLike()"></span>
     </div>
     
-    <div class="item-title">
+    <div class="item-title-bg item-title">
         <div class="item-title__info">
-            <h3 class="item-title__name">{{item.title}}</h3>
-            <p class="item-title__region">From {{item.region}}</p>
+            <h3 class="item-title__name">{{ data.title }}</h3>
+            <p class="item-title__region">From {{ data.region }}</p>
             <div class="item-title__raiting">
-                <span class="icon-star"></span>
-                <p class="raiting">{{item.raiting}}</p>
-                <p class="votes">({{item.votes}})</p>
+                <span class="icon-star" [ngClass]="{'voted': isLiked}" (click)="toggleLike()"></span>
+                <p class="raiting">{{ data.raiting }}</p>
+                <p class="votes">({{ data.votes }})</p>
             </div>
         </div>
         <div class="item-title__markers">
@@ -23,22 +23,21 @@
                 </div>
                 <div class="marker-location">
                     <span class="icon-location"></span>
-                    <p>{{item.region}}</p>
+                    <p>{{ data.region }}</p>
                 </div>
             </div>
-            <div class="roast">
-                {{item.roast}}
-            </div>
+            <div class="roast">{{ data.roast }}</div>
         </div>
     </div>
 </div>
+
 <div class="item-info-container">
     <p class="desc">Description</p>
-    <p class="item-info-desc">{{item.desc}}</p>
+    <p class="item-desc item-info-desc">{{ data.desc }}</p>
     <p class="desc">Size</p>
     <div class="item-size-list">
-        <div class="item-size" *ngFor="let item of coffeeSize" [ngClass]="{'selected': selectedItem === item}" (click)="selectItem(item)">
-            <div class="size">{{item.size}} gm</div>
+        <div class="size-container item-size" *ngFor="let size of coffeeSize" [ngClass]="{'selected': selectedSize === size}" (click)="selectSize(size)">
+            <p class="size">{{ size.value }} gm</p>
         </div>
     </div>
     <div class="item-info-buy">
@@ -46,7 +45,7 @@
             <p class="price-title">Price</p>
             <p class="price-value"><span>$ </span>10.50</p>
         </div>
-        <button class="add-btn">Add to Cart</button>
+        <button class="btn add-to-cart-btn">Add to Cart</button>
     </div>
 </div>
     

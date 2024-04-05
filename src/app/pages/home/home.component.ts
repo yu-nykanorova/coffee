@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,43 +6,6 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  @ViewChild('list') listRef!: ElementRef;
-
-  selectedItem: any = null;
-
-  private isMouseDown = false;
-  private startX = 0;
-  private scrollLeft = 0;
-
-  onMouseDown(event: MouseEvent) {
-    this.isMouseDown = true;
-    this.startX = event.pageX - this.listRef.nativeElement.offsetLeft;
-    this.scrollLeft = this.listRef.nativeElement.scrollLeft;
-
-    this.listRef.nativeElement.style.cursor = 'grabbing';
-
-    document.addEventListener('mousemove', this.onMouseMove.bind(this));
-  }
-
-  onMouseUp() {
-    this.isMouseDown = false;
-    this.listRef.nativeElement.style.cursor = 'grab';
-
-    document.removeEventListener('mousemove', this.onMouseMove.bind(this));
-  }
-
-  onMouseMove(event: MouseEvent) {
-    if (!this.isMouseDown) return;
-    event.preventDefault();
-
-    const x = event.pageX - this.listRef.nativeElement.offsetLeft;
-    const walk = (x - this.startX) * 3;
-    this.listRef.nativeElement.scrollLeft = this.scrollLeft - walk;
-  }
-
-  selectItem(item: any) {
-    this.selectedItem = item;
-  }
 
   public coffeeDrinksData = [
     {
@@ -79,4 +42,10 @@ export class HomeComponent {
     { name: 'Macchiato'},
   ]
 
+  selectedItem: any = this.coffeeDrinks[0];
+
+  selectItem(item: any) {
+    this.selectedItem = item;
+  }
+  
 }

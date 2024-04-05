@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalService } from './global.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(public router: Router) {}
+
+  constructor(public router: Router, private globalService: GlobalService) {}
+  
 }
 
